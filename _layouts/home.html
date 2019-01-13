@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="container clearfix">
+  <main role="main" class="content">
+    {%- for post in site.posts -%}
+      <article class="post">
+        <h1>
+          <a href="{{ post.url | relative_url }}" title="{{ post.title | escape }}">{{ post.title | escape }}</a>
+        </h1>
+        <footer class="post-info">Posted on <span class="post-meta"><time datetime="{{ post.date }}">{{ post.date | date: "%d %B %Y" }}</time></span></footer>
+        {{ post.excerpt }}
+        <a href="{{ post.url }}" title="{{ post.title }}">Read more &raquo;</a>
+      </article>
+    {%- endfor -%}
+  </main>
+</div>
